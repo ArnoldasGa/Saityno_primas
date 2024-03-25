@@ -1,0 +1,43 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+
+  <xs:element name="moviesList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Movie" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MovieName" type="xs:string"/>
+              <xs:element name="Genres" type="xs:string"/>
+              <xs:element name="Actors">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Actor">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="FirstName" type="xs:string"/>
+                          <xs:element name="LastName" type="xs:string"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ProductionCompany" type="xs:string"/>
+              <xs:element name="Director">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="FirstName" type="xs:string"/>
+                    <xs:element name="LastName" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

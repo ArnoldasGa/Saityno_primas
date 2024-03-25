@@ -6,14 +6,16 @@ import javax.xml.bind.annotation.*;
 
 @Table
 @Entity(name= "director")
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Director {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "director_id")
     private int id;
-    @XmlAttribute(name = "firstName")
+    @XmlElement(name = "firstName")
     private String directorFirstName;
-    @XmlAttribute(name = "lastName")
+    @XmlElement(name = "lastName")
     private String directorLastName;
 
     public Director(String directorFirstName, String directorLastName) {
@@ -28,7 +30,7 @@ public class Director {
     @Override
     public String toString() {
         return String.format("""
-                \tDirector:
+                Director:
                 \t\tFirst Name: %s
                 \t\tLast name: %s
                 """,this.directorFirstName,this.directorLastName);

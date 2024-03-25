@@ -2,27 +2,31 @@ package lt.viko.eif.agaigalas.onlinerentalserverapp.model;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Table
 @Entity(name= "actors")
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Actors {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "actors_id")
     private int id;
     @XmlAttribute(name = "firstName")
-    public String actorsFirstName;
+    private String actorsFirstName;
     @XmlAttribute(name = "lastName")
-    public String actorsLastName;
-
-    @ManyToMany(mappedBy = "movieActors")
-    private Set<Movies> actors = new HashSet<>();
+    private String actorsLastName;
+    @ManyToOne
+    @JoinColumn(name = "movie_id")
+    private Movies movie;
 
     public Actors(String actorsFirstName, String actorsLastName) {
         this.actorsFirstName = actorsFirstName;
         this.actorsLastName = actorsLastName;
+    }
+
+    public Actors(Movies movie) {
+        this.movie = movie;
     }
 
     public Actors() {
@@ -36,15 +40,15 @@ public class Actors {
                 \t\tActor:
                 \t\t\tFirst Name: %s
                 \t\t\tLast name: %s
-                """,this.actorsFirstName,this.actorsLastName);
+                """, this.actorsFirstName, this.actorsLastName);
     }
 
-    public Set<Movies> getActors() {
-        return actors;
+    public Movies getMovie() {
+        return movie;
     }
 
-    public void setActors(Set<Movies> actors) {
-        this.actors = actors;
+    public void setMovie(Movies movie) {
+        this.movie = movie;
     }
 
     public String getActorsFirstName() {
@@ -62,5 +66,4 @@ public class Actors {
     public void setActorsLastName(String actorsLastName) {
         this.actorsLastName = actorsLastName;
     }
-
 }

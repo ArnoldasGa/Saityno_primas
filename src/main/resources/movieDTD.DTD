@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE movies_list 
+[
+<!ELEMENT movies_list (movies)>
+<!ELEMENT movies (Movie_name,Genres,Actors_list,Production_company,Director)>
+<!ELEMENT Movie_name (#PCDATA)>
+<!ELEMENT Genres (#PCDATA)>
+<!ELEMENT Actors_list (Actor)>
+<!ELEMENT Actor (First_name,Last_name)>
+<!ELEMENT First_name (#PCDATA)>
+<!ELEMENT Last_name (#PCDATA)>
+<!ELEMENT Production_company (#PCDATA)>
+<!ELEMENT Director (First_name,Last_name)>
+]>
+<movies_list>
+	<movies>
+		<Movie_name>Movie</Movie_name>
+		<Genres>Comedy, Action</Genres>
+		<Actors_list>
+			<Actor>
+				<First_name>
+					First Name
+				</First_name>
+				<Last_name>
+					Name
+				</Last_name>
+				</Actor>
+		</Actors_list>
+		<Production_company>
+			Stuhijo
+		</Production_company>
+		<Director>
+			<First_name>
+				First
+			</First_name>
+			<Last_name>
+				Director
+			</Last_name>
+		</Director>
+		</movies>
+</movies_list>

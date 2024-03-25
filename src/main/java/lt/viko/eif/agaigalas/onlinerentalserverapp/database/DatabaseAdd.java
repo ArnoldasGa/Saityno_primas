@@ -9,17 +9,23 @@ import org.hibernate.Transaction;
 import java.util.*;
 
 public class DatabaseAdd {
-public static void addMovie(String movieName, List<String> actorsList, List<String> genresList, Director director, ProductionCompany studio) {
+public static void addMovie(String Name, List<String> actorsList, List<String> genresList, Director director, ProductionCompany studio) {
     Session session = HibernateUtil.getSessionFactory().openSession();
-    Movies movie = new Movies(movieName);
+    Movies movie = new Movies();
+    MovieName movieName = new MovieName(Name);
+    movie.setMovieName(movieName);
     for (String actor : actorsList) {
         String[] actorInfo = actor.split(",");
         String firstName = actorInfo[0];
         String lastName = actorInfo[1];
-        movie.assignActors(new Actors(firstName, lastName));
+        Actors actors = new Actors(firstName, lastName);
+        actors.setMovie(movie);
+        movie.assignActors(actors);
     }
     for (String genre : genresList) {
-        movie.assignGenres(new Genres(genre));
+        Genres genres = new Genres(genre);
+        genres.setMovie(movie);
+        movie.assignGenres(genres);
     }
     movie.setDirector(director);
     movie.setProductionCompany(studio);

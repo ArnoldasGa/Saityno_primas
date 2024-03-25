@@ -20,6 +20,7 @@
         <mapping class="lt.viko.eif.agaigalas.onlinerentalserverapp.model.Actors"/>
         <mapping class="lt.viko.eif.agaigalas.onlinerentalserverapp.model.Director"/>
         <mapping class="lt.viko.eif.agaigalas.onlinerentalserverapp.model.ProductionCompany"/>
-        <mapping class="lt.viko.eif.agaigalas.onlinerentalserverapp.model.MoviesWrapper"/>
+        <mapping class="lt.viko.eif.agaigalas.onlinerentalserverapp.util.MoviesWrapper"/>
+        <mapping class="lt.viko.eif.agaigalas.onlinerentalserverapp.model.MovieName"/>
     </session-factory>
 </hibernate-configuration>

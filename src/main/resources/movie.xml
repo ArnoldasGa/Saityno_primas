@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<movies>
+    <Movie_name>Movie</Movie_name>
+        <Genres>Comedy, Action</Genres>
+        <Actors_list>
+            <Actor>
+                <First_name>
+                    First Name
+                </First_name>
+                <Last_name>
+                    Name
+                </Last_name>
+            </Actor>
+        </Actors_list>
+        <Production_company>
+            Stuhijo
+        </Production_company>
+        <Director>
+            <First_name>
+                First
+            </First_name>
+            <Last_name>
+                Director
+            </Last_name>
+        </Director>
+</movies>

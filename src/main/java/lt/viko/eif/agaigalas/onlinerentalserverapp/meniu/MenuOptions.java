@@ -1,6 +1,7 @@
 package lt.viko.eif.agaigalas.onlinerentalserverapp.meniu;
 
 import lt.viko.eif.agaigalas.onlinerentalserverapp.database.DatabaseAdd;
+import lt.viko.eif.agaigalas.onlinerentalserverapp.database.DatabaseJaxb;
 import lt.viko.eif.agaigalas.onlinerentalserverapp.database.DatabaseLoad;
 import lt.viko.eif.agaigalas.onlinerentalserverapp.model.*;
 
@@ -18,13 +19,10 @@ public class MenuOptions {
                     loadMovies();
                     break;
                 case 2:
-                    loadGenres();
-                    break;
-                case 3:
                     addMovie();
                     break;
-                case 5:
-                    Converter.pojoToJaxb();
+                case 3:
+                    DatabaseJaxb.loadAllMovies();
                     break;
                 case 0:
                     System.out.println("Good Bye.");
@@ -39,10 +37,9 @@ public class MenuOptions {
     protected static int option () {
         System.out.println("Select one of the options: ");
         System.out.println("1.Print all movies");
-        System.out.println("2.Print all genre");
-        System.out.println("3.Add new movie");
-/*        System.out.println("4.Add new actor");*/
-        System.out.println("5.JAXB form POJO");
+        System.out.println("2.Add new movie");
+        System.out.println("3.JAXB form POJO to xml");
+        System.out.println("4.JAXB from xml to POJO");
         System.out.println("0.End program");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
@@ -86,9 +83,6 @@ public class MenuOptions {
     }
     protected static void loadMovies() {
         DatabaseLoad.loadAllMovies();
-    }
-    protected static void loadGenres() {
-        DatabaseLoad.loadAllGenres();
     }
 
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<moviesList>
+    <movie>
+        <id>1</id>
+        <movieName>
+            <id>3</id>
+            <movieName>Movie</movieName>
+        </movieName>
+        <director>
+            <id>2</id>
+            <firstName>Directos</firstName>
+            <lastName>Name</lastName>
+        </director>
+        <company companyName="Studio">
+            <id>4</id>
+        </company>
+        <actors>Actros Name</actors>
+        <genres>Action</genres>
+    </movie>
+</moviesList>

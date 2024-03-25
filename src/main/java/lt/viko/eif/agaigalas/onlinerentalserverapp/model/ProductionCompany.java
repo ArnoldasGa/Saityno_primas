@@ -6,6 +6,8 @@ import javax.xml.bind.annotation.*;
 
 @Table
 @Entity(name= "production_company")
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class ProductionCompany {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,8 +26,7 @@ public class ProductionCompany {
 
     @Override
     public String toString() {
-        return String.format("\tProduction company :\n" +
-                "\t\t%s",this.companyName);
+        return String.format("\tProduction company : %s",this.companyName);
     }
 
     public String getCompanyName() {

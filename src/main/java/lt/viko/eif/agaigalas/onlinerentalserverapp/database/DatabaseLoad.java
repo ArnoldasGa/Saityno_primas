@@ -15,14 +15,5 @@ public class DatabaseLoad {
             e.printStackTrace();
         }
     }
-    public static void loadAllGenres() {
-        List<Genres> genres = null;
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            genres = session.createQuery("from genres", Genres.class).list();
-            genres.forEach(System.out::println);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
 }

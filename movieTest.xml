@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <movies>
     <id>0</id>
+    <movieName>
+        <id>0</id>
+        <movieName>Movies</movieName>
+    </movieName>
     <genres genre="Action">
         <id>0</id>
     </genres>
@@ -15,8 +19,4 @@
     <company companyName="Company">
         <id>0</id>
     </company>
-    <movieName>
-        <id>0</id>
-        <movieName>Movies</movieName>
-    </movieName>
 </movies>
