@@ -3,6 +3,9 @@ package lt.viko.eif.agaigalas.onlinerentalserverapp.model;
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 
+/**
+ * This is the MovieName model class
+ */
 @Table
 @Entity(name= "movieName")
 @XmlAccessorType(XmlAccessType.FIELD)

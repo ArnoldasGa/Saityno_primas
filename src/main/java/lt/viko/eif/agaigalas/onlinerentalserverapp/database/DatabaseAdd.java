@@ -8,7 +8,19 @@ import org.hibernate.Transaction;
 
 import java.util.*;
 
+/**
+ * This is a class to add to Database a new entry
+ */
 public class DatabaseAdd {
+    /**
+     * Adds a new movie entry to the database.
+     *
+     * @param Name        The name of the movie.
+     * @param actorsList  A list of actors starring in the movie.
+     * @param genresList  A list of genres associated with the movie.
+     * @param director    The director of the movie.
+     * @param studio The production company of the movie.
+     */
 public static void addMovie(String Name, List<String> actorsList, List<String> genresList, Director director, ProductionCompany studio) {
     Session session = HibernateUtil.getSessionFactory().openSession();
     Movies movie = new Movies();

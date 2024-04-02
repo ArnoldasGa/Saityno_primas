@@ -3,7 +3,9 @@ package lt.viko.eif.agaigalas.onlinerentalserverapp.model;
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 
-
+/**
+ * This class is production company model class
+ */
 @Table
 @Entity(name= "production_company")
 @XmlRootElement

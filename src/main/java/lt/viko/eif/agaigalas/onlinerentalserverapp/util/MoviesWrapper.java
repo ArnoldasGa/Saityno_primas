@@ -6,6 +6,9 @@ import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This is a MoviesWrapper class that add all the movies in one list
+ */
 @XmlRootElement(name = "moviesList")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class MoviesWrapper {

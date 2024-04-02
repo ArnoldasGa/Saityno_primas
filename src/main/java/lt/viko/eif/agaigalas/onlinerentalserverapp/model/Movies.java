@@ -7,7 +7,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-
+/**
+ * Represents a movie entity in the application.
+ */
 @Table
 @Entity(name= "movies")
 @XmlRootElement
@@ -42,6 +44,10 @@ public class Movies {
 
     public Movies() {
     }
+    /**
+     * Overrides the toString method to provide a custom string representation of a movie entity.
+     * @return A string representation of the movie.
+     */
     @Override
     public String toString(){
         return String.format("""
@@ -51,21 +57,29 @@ public class Movies {
                     %s""",
                 this.movieName, constructGenre(), constructActors(),this.productionCompany,this.director);
     }
+    /**
+     * Helper method to construct the string representation of genres associated with the movie.
+     * @return A string representation of genres.
+     */
     private String constructGenre() {
         StringBuilder result = new StringBuilder();
         List<String> genresList = getGenresAsList();
         result.append("Genres: \n");
-        for (String genres : genresList) {
-            result.append("\t\tGenre: ").append(genres).append("\n");
+        for (String genre : genresList) {
+            result.append("\t\tGenre: ").append(genre).append("\n");
         }
         return result.toString();
     }
+    /**
+     * Helper method to construct the string representation of actors associated with the movie.
+     * @return A string representation of actors.
+     */
     private String constructActors() {
         StringBuilder result = new StringBuilder();
         List<String> actorsAsList = getActorsAsList();
             result.append("\tActors List:\n");
-            for (String actors : actorsAsList) {
-                result.append(actors);
+            for (Actors actor : movieActors) {
+                result.append(actor);
             }
         return result.toString();
     }

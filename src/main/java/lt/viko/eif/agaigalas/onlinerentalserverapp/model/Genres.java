@@ -3,6 +3,10 @@ package lt.viko.eif.agaigalas.onlinerentalserverapp.model;
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 
+/**
+ * This is the Genres class
+ */
+
 @Table
 @Entity(name= "genres")
 @XmlRootElement

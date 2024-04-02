@@ -4,11 +4,19 @@ import lt.viko.eif.agaigalas.onlinerentalserverapp.database.DatabaseAdd;
 import lt.viko.eif.agaigalas.onlinerentalserverapp.database.DatabaseJaxb;
 import lt.viko.eif.agaigalas.onlinerentalserverapp.database.DatabaseLoad;
 import lt.viko.eif.agaigalas.onlinerentalserverapp.model.*;
+import lt.viko.eif.agaigalas.onlinerentalserverapp.util.JaxbUtil;
+import lt.viko.eif.agaigalas.onlinerentalserverapp.util.XmlToPojo;
 
-import javax.xml.bind.JAXBException;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+/**
+ * This class is to manage the program and displays the menu options
+ */
 public class MenuOptions {
+    /**
+     * Menu options and inputs for the user
+     */
     public static void menu(){
 
         int choice;
@@ -24,6 +32,12 @@ public class MenuOptions {
                 case 3:
                     DatabaseJaxb.loadAllMovies();
                     break;
+                case 4:
+                    XmlToPojo.xmlToPojo();
+                    break;
+                case 5:
+                    JaxbUtil.validateXml("movies.xml" , "JAXBObject.xsd");
+                    break;
                 case 0:
                     System.out.println("Good Bye.");
                     break;
@@ -34,16 +48,25 @@ public class MenuOptions {
         } while (choice != 0);
 
     }
+    /**
+     * Displays the menu options and returns the user's choice.
+     *
+     * @return The user's choice.
+     */
     protected static int option () {
         System.out.println("Select one of the options: ");
         System.out.println("1.Print all movies");
         System.out.println("2.Add new movie");
         System.out.println("3.JAXB form POJO to xml");
         System.out.println("4.JAXB from xml to POJO");
+        System.out.println("5.Validate");
         System.out.println("0.End program");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
     }
+    /**
+     * Adds a new movie to the database based on user input.
+     */
 
     protected static void addMovie() {
         Scanner scanner = new Scanner(System.in);
@@ -81,6 +104,9 @@ public class MenuOptions {
         ProductionCompany studio = new ProductionCompany(input);
         DatabaseAdd.addMovie(movieName,actorsList,genresList,director,studio);
     }
+    /**
+     * Loads all movies from the database.
+     */
     protected static void loadMovies() {
         DatabaseLoad.loadAllMovies();
     }
