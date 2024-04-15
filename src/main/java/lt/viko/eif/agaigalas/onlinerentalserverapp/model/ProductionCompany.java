@@ -15,7 +15,7 @@ public class ProductionCompany {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "company_id")
     private int id;
-    @XmlAttribute(name = "companyName")
+    @XmlElement(name = "companyName")
     private String companyName;
 
     public ProductionCompany(String companyName) {
@@ -28,7 +28,7 @@ public class ProductionCompany {
 
     @Override
     public String toString() {
-        return String.format("\tProduction company : %s",this.companyName);
+        return String.format("Production company : %s",this.companyName);
     }
 
     public String getCompanyName() {

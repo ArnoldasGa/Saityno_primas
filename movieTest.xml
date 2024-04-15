@@ -5,18 +5,15 @@
         <id>0</id>
         <movieName>Movies</movieName>
     </movieName>
-    <genres genre="Action">
-        <id>0</id>
-    </genres>
-    <actors firstName="First" lastName="Last">
-        <id>0</id>
-    </actors>
     <director>
         <id>0</id>
         <firstName>FirstName</firstName>
         <lastName>LastName</lastName>
     </director>
-    <company companyName="Company">
+    <company>
         <id>0</id>
+        <companyName>Company</companyName>
     </company>
+    <actors>First Last</actors>
+    <genres>Action</genres>
 </movies>

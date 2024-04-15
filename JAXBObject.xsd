@@ -1,8 +1,3 @@
-
-Based on the provided XML structure, I'll update the XSD schema to match it. Here's the revised XSD schema:
-
-        xml
-        Copy code
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
            elementFormDefault="qualified">
 
@@ -32,12 +27,26 @@ Based on the provided XML structure, I'll update the XSD schema to match it. Her
               </xs:element>
               <xs:element name="company">
                 <xs:complexType>
-                  <xs:attribute name="companyName" type="xs:string"/>
-                  <xs:element name="id" type="xs:int"/>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:int"/>
+                    <xs:element name="companyName" type="xs:string"/>
+                  </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="actors" type="xs:string"/>
-              <xs:element name="genres" type="xs:string"/>
+              <xs:element name="actors" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string"/>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="genres" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string"/>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

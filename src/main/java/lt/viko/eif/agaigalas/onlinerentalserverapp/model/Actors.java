@@ -40,10 +40,10 @@ public class Actors {
     public String toString() {
         return String.format(
                 """
-                \t\tActor:
+                \n\t\tActor:
                 \t\t\tFirst Name: %s
-                \t\t\tLast name: %s
-                """, this.actorsFirstName, this.actorsLastName);
+                \t\t\tLast name: %s""",
+                this.actorsFirstName, this.actorsLastName);
     }
 
     public Movies getMovie() {
@@ -69,4 +69,5 @@ public class Actors {
     public void setActorsLastName(String actorsLastName) {
         this.actorsLastName = actorsLastName;
     }
+
 }

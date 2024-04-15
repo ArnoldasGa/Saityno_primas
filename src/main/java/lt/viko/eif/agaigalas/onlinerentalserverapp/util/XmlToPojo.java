@@ -1,6 +1,9 @@
 package lt.viko.eif.agaigalas.onlinerentalserverapp.util;
+import lt.viko.eif.agaigalas.onlinerentalserverapp.model.Actors;
 import lt.viko.eif.agaigalas.onlinerentalserverapp.model.Movies;
 import java.io.File;
+import java.util.List;
+
 import static lt.viko.eif.agaigalas.onlinerentalserverapp.util.JaxbUtil.unmarshalFromXML;
 /**
  * Utility class for converting XML data to POJO (Plain Old Java Object) using JAXB.
@@ -17,12 +20,12 @@ public class XmlToPojo {
             MoviesWrapper moviesList = unmarshalFromXML(MoviesWrapper.class, xmlFile);
 
             for (Movies movie : moviesList.getMovies()) {
-                System.out.println("Movie: " + movie.getMovieName().getMovieName());
+                System.out.println(movie);
+/*                System.out.println("Movie: " + movie.getMovieName().getMovieName());
                 System.out.println("Director: " + movie.getDirector().getDirectorFirstName() + " " + movie.getDirector().getDirectorLastName());
                 System.out.println("Production Company: " + movie.getProductionCompany().getCompanyName());
                 System.out.println("Actors: " + String.join(", ", movie.getActorsAsList()));
-                System.out.println("Genres: " + String.join(", ", movie.getGenresAsList()));
-                System.out.println();
+                System.out.println("Genres: " + String.join(", ", movie.getGenresAsList()));*/
             }
         } catch (javax.xml.bind.JAXBException e) {
             e.printStackTrace();

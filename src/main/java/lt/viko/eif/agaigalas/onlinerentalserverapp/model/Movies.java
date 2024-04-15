@@ -29,7 +29,7 @@ public class Movies {
     @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
     private Set<Genres> movieGenres = new HashSet<>();
 
-   /* @XmlElement(name = "actors")*/
+    /* @XmlElement(name = "actors")*/
     @XmlTransient
     @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
     private Set<Actors> movieActors = new HashSet<>();
@@ -53,9 +53,10 @@ public class Movies {
         return String.format("""
                 Movie:
                     Movie name : %s
-                    %s%s%s
-                    %s""",
-                this.movieName, constructGenre(), constructActors(),this.productionCompany,this.director);
+                    %s
+                    %s    Actors List:%s
+                    Genres:%s""",
+                this.movieName,this.productionCompany,this.director, constructActors(), constructGenre());
     }
     /**
      * Helper method to construct the string representation of genres associated with the movie.
@@ -64,9 +65,8 @@ public class Movies {
     private String constructGenre() {
         StringBuilder result = new StringBuilder();
         List<String> genresList = getGenresAsList();
-        result.append("Genres: \n");
         for (String genre : genresList) {
-            result.append("\t\tGenre: ").append(genre).append("\n");
+            result.append("\n\t\tGenre: ").append(genre);
         }
         return result.toString();
     }
@@ -77,10 +77,9 @@ public class Movies {
     private String constructActors() {
         StringBuilder result = new StringBuilder();
         List<String> actorsAsList = getActorsAsList();
-            result.append("\tActors List:\n");
-            for (Actors actor : movieActors) {
-                result.append(actor);
-            }
+        for (Actors actor : movieActors) {
+            result.append(actor);
+        }
         return result.toString();
     }
 

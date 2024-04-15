@@ -11,10 +11,31 @@
             <firstName>Directos</firstName>
             <lastName>Name</lastName>
         </director>
-        <company companyName="Studio">
+        <company>
             <id>4</id>
+            <companyName>Studio</companyName>
         </company>
         <actors>Actros Name</actors>
+        <genres>Action</genres>
+    </movie>
+    <movie>
+        <id>6</id>
+        <movieName>
+            <id>8</id>
+            <movieName>First</movieName>
+        </movieName>
+        <director>
+            <id>7</id>
+            <firstName>Director</firstName>
+            <lastName>Fun</lastName>
+        </director>
+        <company>
+            <id>9</id>
+            <companyName>Studdio</companyName>
+        </company>
+        <actors>Actor Bad</actors>
+        <actors>Actor Good</actors>
+        <genres>Comedy</genres>
         <genres>Action</genres>
     </movie>
 </moviesList>
